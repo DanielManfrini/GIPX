@@ -1,0 +1,32 @@
+<!-- o index só irá direcionar para a página de login -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script type='text/JavaScript'>window.location.href = 'login.php'</script>
+</body>
+<script>
+    // Função para apagar todos os cookies
+    function apagarCookies() {
+        // Obtém todos os cookies do site
+        var cookies = document.cookie.split(";");
+
+        // Percorre os cookies e os remove um por um
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            var eqPos = cookie.indexOf("=");
+            var nome = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = nome + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+    }
+
+    // Chama a função para apagar os cookies
+    apagarCookies();
+</script>

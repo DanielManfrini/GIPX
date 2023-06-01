@@ -1,0 +1,236 @@
+const botao_cartao = document.getElementById("provisorios");
+const div_cartao = document.getElementById("container_cartoes");
+
+const botao_bloqueio = document.getElementById("bloqueio");
+const div_bloqueio = document.getElementById("container_bloqueio");
+
+const botao_heads = document.getElementById("heads");
+const div_heads = document.getElementById("container_heads");
+const div_op_heads = document.getElementById("botoes_headsets");
+
+
+const select_motivo = document.getElementById("opcao");
+const label_headset_novo = document.getElementById("label_headset_novo");
+const headset_novo = document.getElementById("headset_novo");
+const label_chamado = document.getElementById("label_chamado");
+const chamado = document.getElementById("chamado");
+const label_desconto = document.getElementById("label_desconto");
+const desconto = document.getElementById("desconto");
+
+botao_cartao.addEventListener("click", function() {
+    div_cartao.style.display = "grid";
+    div_bloqueio.style.display = "none";
+    div_heads.style.display = "none";
+    div_op_heads.style.display = "none";
+});
+botao_bloqueio.addEventListener("click", function() {
+    div_cartao.style.display = "none";
+    div_bloqueio.style.display = "grid";
+    div_heads.style.display = "none";
+    div_op_heads.style.display = "none";
+});
+botao_heads.addEventListener("click", function() {
+    div_cartao.style.display = "none";
+    div_bloqueio.style.display = "none";
+    div_heads.style.display = "grid";
+    div_op_heads.style.display = "grid";
+});
+
+select_motivo.addEventListener("change", function() {
+    const valorSelecionado = select_motivo.value;
+  
+    // exibe a seção correspondente ao valor selecionado
+    if (valorSelecionado === "troca") {
+        label_headset_novo.style.display = "grid";
+        headset_novo.style.display = "grid";
+        label_chamado.style.display = "grid";
+        chamado.style.display = "grid";
+        label_desconto.style.display = "grid";
+        desconto.style.display = "grid";
+    }
+    if (valorSelecionado === "integracao") {
+        label_headset_novo.style.display = "grid";
+        headset_novo.style.display = "grid";
+        label_chamado.style.display = "none";
+        chamado.style.display = "none";
+        label_desconto.style.display = "none";
+        desconto.style.display = "none";
+    } 
+    if (valorSelecionado === "emprestimo") {
+        label_headset_novo.style.display = "grid";
+        headset_novo.style.display = "grid";
+        label_chamado.style.display = "none";
+        chamado.style.display = "none";
+        label_desconto.style.display = "none";
+        desconto.style.display = "none";
+    } 
+    if (valorSelecionado === "entrega") {
+        label_headset_novo.style.display = "grid";
+        headset_novo.style.display = "grid";
+        label_chamado.style.display = "none";
+        chamado.style.display = "none";
+        label_desconto.style.display = "grid";
+        desconto.style.display = "grid";
+    } 
+  });
+ 
+async function buscar_usuario(registro){
+    //console.log(registro)
+
+    // receber a matricula
+    var matricula = document.querySelector('#matricula')
+
+    var valor_matricula = matricula.value;
+    console.log(valor_matricula)
+
+    // Verificar matricula
+    if (valor_matricula.length == 6){
+        // realizar a requisição
+        const dados = await fetch('../funcoes/buscar_usuario.php?matricula=' + valor_matricula);
+        // ler os dados
+        const resposta = await dados.json();
+        console.log(resposta);
+        // verificar se retona erro
+        if(resposta['erro'] == true){
+            //erro
+        }else{
+
+            document.getElementById('nome').value = resposta['dados'][0]['Nome'];
+            document.getElementById('id_setor').value = resposta['dados'][0]['departamento'];
+            document.getElementById('cartao').value = resposta['dados'][0]['Cartao'];
+            //document.getElementById('pis').value = resposta['dados'][0]['Pis'];                        
+            document.getElementById('cadastrar_funcionario').setAttribute('disabled',true);
+            
+            if(resposta['dados'][1]['Bloqueado'] == 1){
+                document.getElementById('situacao_bloqueio').value = 'BLOQUEADO';
+            } else {
+                document.getElementById('situacao_bloqueio').value = 'LIBERADO';
+            }
+            
+            
+            if(resposta['dados'][0]['Situacao'] == 1){
+                document.getElementById('situacao').value = 'DEMITIDO';
+                document.getElementById('demissao').value = resposta['dados'][0]['DataDemissao'];
+            } else {
+                document.getElementById('situacao').value = 'TRABALHANDO';
+            }
+            if(resposta['dados'][0]['HeadEmprestimo'] != null){// EM CASO DE EMPRESTIMO
+
+                document.getElementById('headset_aual').value = resposta['dados'][0]['HeadEmprestimo'];
+                document.getElementById('situacao_head').value = 'EMPRESTADO';
+
+                document.getElementById('baixa_head').setAttribute('disabled',true);                        
+                document.getElementById('atualizar_head').setAttribute('disabled',true);                      
+                document.getElementById('baixa_emprestimo').removeAttribute('disabled',true);
+
+            }else{
+                if(resposta['dados'][0]['HeadAtual'] != null){// QUANDO HÁ UM HEADSET EM USO
+
+                    document.getElementById('headset_aual').value = resposta['dados'][0]['HeadAtual'];
+                    document.getElementById('situacao_head').value = 'EM USO';
+
+                    document.getElementById('baixa_head').removeAttribute('disabled',true);                        
+                    document.getElementById('atualizar_head').removeAttribute('disabled',true);                        
+                    document.getElementById('baixa_emprestimo').setAttribute('disabled',true);
+
+                }else{
+                    if(resposta['dados'][0]['HeadAntigo'] != null){// QUNDO FOI DEVOLVIDO
+
+                        document.getElementById('headset_aual').value = resposta['dados'][0]['HeadAntigo'];
+                        document.getElementById('situacao_head').value = 'DEVOLVIDO';
+
+                        document.getElementById('baixa_head').setAttribute('disabled',true);                        
+                        document.getElementById('atualizar_head').removeAttribute('disabled',true);                        
+                        document.getElementById('baixa_emprestimo').setAttribute('disabled',true);
+
+                    }else{
+                        document.getElementById('headset_aual').value = "";
+
+                        document.getElementById('baixa_head').setAttribute('disabled',true);                        
+                        document.getElementById('atualizar_head').removeAttribute('disabled',true);                        
+                        document.getElementById('baixa_emprestimo').setAttribute('disabled',true);
+
+                    }
+                }
+            }
+        }
+        await busca_cartao_provisorio();
+    }
+}
+function verifica_selecionado(opcao){
+    console.log(opcao)
+    if (opcao == 'troca'){
+        document.getElementById('chamado').removeAttribute('disabled',true)
+    }
+    if (opcao == 'integracao'){
+        document.getElementById('chamado').setAttribute('disabled',true)
+    }
+    if (opcao == 'emprestimo'){
+        document.getElementById('chamado').setAttribute('disabled',true)
+    }
+}
+async function busca_cartao_provisorio(){
+    var matricula = document.querySelector('#matricula')
+
+    var valor_matricula = matricula.value;
+    console.log(valor_matricula)
+    // realizar a requisição
+    const dados_provisorio = await fetch('../funcoes/busca_provisorio.php?matricula=' + valor_matricula);
+    // ler os dados
+    const resposta_provisorio = await dados_provisorio.json();
+    console.log(resposta_provisorio);
+    if(resposta_provisorio['erro'] == true){
+        //erro
+    }else{
+        if(resposta_provisorio['dados'].length != 0){
+            console.log(resposta_provisorio['dados'][0]['NumeroCartao'])
+            document.getElementById('cartao_provisorio').value = resposta_provisorio['dados'][0]['NumeroCartao'];
+            document.getElementById('desassociar').removeAttribute('disabled',true)
+            document.getElementById('associar').setAttribute('disabled',true)
+        }else{
+            document.getElementById('associar').removeAttribute('disabled',true)
+            document.getElementById('desassociar').setAttribute('disabled',true)
+        }
+    }
+}
+async function atualizar_headset(){
+    
+    // COLETANDO AS VARIÁVEIS
+    const { value: valor_matricula } = document.querySelector('#matricula');
+    const { value: valor_head_novo } = document.querySelector('#headset_novo');
+    const { value: valor_chamado } = document.querySelector('#chamado');
+    const { value: valor_motivo } = document.querySelector('#opcao');
+    const { value: valor_desconto } = document.querySelector('#desconto');
+    const { value: valor_head_atual } = document.querySelector('#headset_aual');
+
+    var dados_head = [valor_matricula,valor_head_novo ,valor_chamado ,valor_motivo ,valor_desconto,valor_head_atual];
+
+    console.log(dados_head);
+
+    console.log("motivo: " + valor_motivo)
+
+    // realizar a requisição
+    const dados = await fetch('../funcoes/atualiza_heads.php?dados_head=' + dados_head);
+    // ler os dados
+    const resposta = await dados.json();
+    console.log(resposta);
+
+    if(resposta['erro'] == false){
+        await swal({
+            title: "Sucesso!",
+            text: resposta['dados'],
+            icon: "success",
+            button: false,
+            timer: 1500
+          });
+    }else{
+        await swal({
+            title: "Erro!",
+            text: resposta['dados'],
+            icon: "error",
+            button: false,
+            timer: 1500
+          });
+    }
+    buscar_usuario(valor_matricula)
+}
