@@ -93,7 +93,7 @@ V.2.5 = Por: Daniel Lopes Manfrini.
 V.3.0 = Por: Daniel Lopes Manfrini Data: 19/05/2023.
 
 	Sucesso na comunicação com MSSQL
-		Esta acção abriu diversas novas oportunidades de integração,
+		Esta ação abriu novas oportunidades de integração,
 		eliminando totalment o uso do servidor windows 172.10.20.60
 
 V.3.1 = Por: Daniel Lopes Manfrini.
