@@ -1,0 +1,105 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+form *{
+  display: inline-block;
+  margin-left: 5px;
+}
+form input[type="date"]{
+  display: inline-block;
+  margin-right: 15px;
+  padding-left: 10px;
+  border-radius: 5px;
+  height: 25px;
+}
+form input[type="submit"]{
+  display: inline-block;
+  background: rgb(15,125,162);
+  color: white;
+
+  width: 70px;
+  height: 25px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+form input[type="submit"]:hover{
+  background-color: rgb(30, 47, 71);
+}
+
+table { 
+  border-collapse: collapse;
+
+  background-color: #ffffff;
+
+  font-family: 'arial';
+  color: #000;
+
+  border: 2px solid rgb(12,35,67);
+
+}
+th:not(.form){
+  padding: 5px;
+
+  border:  2px solid rgb(12,35,67);
+}
+
+.form{
+  padding: 10px;
+}
+
+td:not(.canvas){ 
+  padding: 10px;
+
+  font-size: 15px;
+
+  border-right:  2px solid rgb(12,35,67);
+}
+td:not(.tabela td){
+  border-bottom:  2px solid rgb(12,35,67);
+
+  width: 320px;
+}
+
+.tabela{
+  margin: 0 auto;
+}
+.tabela td{
+  border-bottom:  2px solid rgb(12,35,67);
+
+  width: 200px
+}
+
+
+.container {
+  display: flex;
+  position: relative;
+
+  margin: 50px 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.container_interno{
+  background-color: #ffffff;
+
+  width: 1000px;
+
+  margin: 0 30px;
+
+  padding: 15px 15px;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+  border-radius: 5px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #000;
+}

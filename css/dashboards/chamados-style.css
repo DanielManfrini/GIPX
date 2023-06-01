@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .pq{
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+    
+  }
+
+  .quantidade {
+    background-color: white;
+    color: black;
+    font-family: arial;
+
+    width: 1200px;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .quantidade h1{
+    color: rgb(51,102,204);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quantidade h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .quantidade input[type='date']{
+    padding-left: 10px;
+
+    position: relative;
+
+    left: 20px;
+    height: 25px;
+
+    border-radius: 5px;
+  }
+  .quantidade input[type="submit"]{
+    background: rgb(51,102,204);
+    color: white;
+  
+    width: 70px;
+    height: 25px;
+
+    position: relative;
+    left: 25px;
+   
+    border-radius: 5px;
+  
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  .quantidade input[type="submit"]:hover{
+    background-color: rgb(12,35,67);
+  }
+
+  .tecnicos {
+    background-color: rgba(255, 255, 255, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .supervisores{
+    background-color: rgba(255, 255, 255, 0);
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .tipo{
+    background-color: rgba(255, 255, 255, 0);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 50px;
+
+  }

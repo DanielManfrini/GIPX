@@ -1,0 +1,772 @@
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-font-smoothing: antialiased;
+    /*background-image: linear-gradient(to bottom right, #022954 , #FF793C);*/
+    background-color: #e6e6e6;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+/* estilos para dispositivos móveis */
+@media only screen and (max-width: 850px) {
+    
+    .menu-icon {
+        display: block;
+        background-color: #022954;
+        color: #fff;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        height: 42px;
+        padding: 5px 5px;
+        padding-bottom: 11px;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #022954;
+        font-family: Arial;
+        margin: 0;
+        width: 100%;
+        border-bottom: 3px solid #FF793C;
+        z-index: 2;
+    }
+
+    .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .navbar .imagem {
+        width: auto;
+        height: 42px;
+        padding: 5px 5px;
+        padding-bottom: 11px;
+    }
+
+    .navbar .imagem:hover {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+
+    .navbar .logoff {
+        overflow: hidden;
+        display: block;
+        clear: both;
+        height: 100%;
+        padding: 12px 22px;
+    }
+
+    .navbar .logoff:hover {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+    .navbar .nome {
+        display: none;
+    }
+    
+
+    .menu {
+        display: none;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu li {
+        border-bottom: 1px solid #f2f2f2;
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 10px;
+        color: #022954;
+        text-decoration: none;
+    }
+
+    .menu li a:hover {
+        background-color: #f2f2f2;
+    }
+
+    /* The dropdown container */
+    .dropdown {
+        display: block;
+        clear: both;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    /* Dropdown submit */
+    .dropdown .dropbtn {
+        font-size: 14px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: inherit;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+        text-align: center;
+        padding: 12px 22px;
+    }
+
+    /* Add a red background color to navbar links on hover */
+
+    .dropdown:hover .dropbtn {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+
+    /* Dropdown content (hidden by default) GERANCIA */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 117px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+    /* Dropdown content ATUALIZAR */
+    .dropdown-content-atualizar {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-atualizar a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-atualizar a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-atualizar {
+        display: block;
+    }
+
+    /* Dropdown content RELATORIO */
+    .dropdown-content-relatorio {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 124px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-relatorio a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-relatorio a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-relatorio {
+        display: block;
+    }
+
+    /* Dropdown content EQUIPAMENTOS */
+    .dropdown-content-equipamentos {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 156px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-equipamentos a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-equipamentos a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-equipamentos {
+        display: block;
+    }
+
+    /* Dropdown content DASBOARDS */
+    .dropdown-content-dashboards {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 142px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-dashboards a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-dashboards a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-dashboards {
+        display: block;
+    }
+
+    /************ FOOTER ************/
+    .footer {
+        height: 25px;
+
+        background-color: #022954;
+        ;
+        color: rgb(255, 255, 255);
+
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        padding-top: 2px;
+        padding-left: 2px;
+
+        border-top: 3px solid #FF793C;
+        transition: 0.5s;
+        z-index: 5;
+    }
+
+    /************ BARRA LATERAL ************/
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        font-family: Arial;
+
+        width: 100px;
+        height: 100%;
+
+        background-color: #022954;
+        padding-top: 45px;
+
+        border-right: 2px solid #FF793C;
+        transition: 0.5s;
+
+        z-index: 1;
+    }
+
+    .sidebar a {
+        float: left;
+
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+
+        width: 98px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar .button-link {
+        display: inline-block;
+
+        text-align: center;
+        text-decoration: none;
+
+        background-color: transparent;
+        color: white;
+
+        border: none;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        cursor: pointer;
+    }
+}
+
+/****************************************** estilos para desktops ****************************************/
+
+
+@media only screen and (min-width: 850px) {
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: flex-start;
+        overflow: visible;
+        background-color: #022954;
+        font-family: Arial;
+        margin: 0;
+        height: 45px;
+        position: fixed;
+        width: 100%;
+        border-bottom: 3px solid #FF793C;
+        z-index: 2;
+    }
+    .menu {
+        display: block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        font-size: 14px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .navbar .imagem {
+        width: auto;
+        height: 42px;
+        padding: 5px 5px;
+        padding-bottom: 11px;
+    }
+
+    .navbar .imagem:hover {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+
+    .navbar .logoff {
+        float: left;
+        overflow: hidden;
+        height: 100%;
+        height: 42px;
+        padding: 12px 22px;
+    }
+
+    .navbar .logoff:hover {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+    .navbar .nome {
+        float: left;
+        overflow: hidden;
+        flex-grow: 1;
+        height: 42px;
+        padding: 12px 22px;
+    }
+
+    /* The dropdown container */
+    .dropdown {
+        float: left;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    /* Dropdown submit */
+    .dropdown .dropbtn {
+        font-size: 14px;
+        border: none;
+        outline: none;
+        color: white;
+        background-color: inherit;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+        text-align: center;
+        padding: 12px 22px;
+    }
+
+    /* Add a red background color to navbar links on hover */
+
+    .dropdown:hover .dropbtn {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+
+    /* Dropdown content (hidden by default) GERANCIA */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 117px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+    /* Dropdown content ATUALIZAR */
+    .dropdown-content-atualizar {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-atualizar a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-atualizar a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-atualizar {
+        display: block;
+    }
+
+    /* Dropdown content RELATORIO */
+    .dropdown-content-relatorio {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 124px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-relatorio a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-relatorio a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-relatorio {
+        display: block;
+    }
+
+    /* Dropdown content EQUIPAMENTOS */
+    .dropdown-content-equipamentos {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 156px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-equipamentos a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-equipamentos a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-equipamentos {
+        display: block;
+    }
+
+    /* Dropdown content DASBOARDS */
+    .dropdown-content-dashboards {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 142px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content-dashboards a {
+        font-size: 12px;
+        float: none;
+        color: black;
+        padding: 10px 10px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content-dashboards a:hover {
+        background-color: #ddd;
+        transition: 0.3s;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content-dashboards {
+        display: block;
+    }
+
+    /************ FOOTER ************/
+    .footer {
+        height: 25px;
+
+        background-color: #022954;
+        ;
+        color: rgb(255, 255, 255);
+
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        padding-top: 2px;
+        padding-left: 2px;
+
+        border-top: 3px solid #FF793C;
+        transition: 0.5s;
+        z-index: 5;
+    }
+
+    /************ BARRA LATERAL ************/
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        font-family: Arial;
+
+        width: 100px;
+        height: 100%;
+
+        background-color: #022954;
+        padding-top: 45px;
+
+        border-right: 2px solid #FF793C;
+        transition: 0.5s;
+
+        z-index: 1;
+    }
+
+    .sidebar a {
+        float: left;
+
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+
+        width: 98px;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .sidebar .button-link {
+        display: inline-block;
+
+        text-align: center;
+        text-decoration: none;
+
+        background-color: transparent;
+        color: white;
+
+        border: none;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        cursor: pointer;
+    }
+
+    .sidebar a:hover {
+        background-color: #FF793C;
+        transition: 0.5s;
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: rgb(60, 60, 60) #022954;
+        ;
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #022954;
+        ;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: rgb(60, 60, 60);
+        border-radius: 5px;
+        border: 3px outset #FF793C;
+        transition: 0.5s;
+        height: 20px;
+    }
+
+
+}
+
+
+
+/*
+.sidebar input[type="submit"]{
+    background: rgb(12,35,67);
+    color: white;
+  
+    width: 90px;
+    height: 50px;
+  
+    position: relative;
+    left: 5px;
+    top: 0px;
+
+    border-color: rgb(12,35,67);
+  
+    cursor: pointer;
+    transition: 0.5s;
+  }
+.sidebar input[type="submit"]:hover{
+    background-color: rgb(15,125,162);
+  }
+*/
+
+
+/************ Scrollbar CSS ************/

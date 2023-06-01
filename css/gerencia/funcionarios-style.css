@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*------------------------------------------------ <> ESTILO PRA DESKTOP <> ------------------------------------------------*/
+
+@media only screen and (min-width: 850px) {
+
+  .container {
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+  }
+
+  input {
+    padding-left: 5px;
+    border-width: 1px 0.5px;
+    /* Ajusta a largura da borda para manter a mesma aparência visual */
+  }
+  .container_interno {
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+
+    grid-template-rows: auto auto;
+
+    gap: 15px;
+  }
+
+  /*------------------------------------------------ <> FUNCIONÁRIO <> ------------------------------------------------*/
+
+  .container_funcionario {
+    display: grid;
+
+    background-color: #fff;
+
+    padding: 10px 10px;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+    grid-template-columns: 520px 100px;
+
+    gap: 15px;
+  }
+
+  .container_funcionario .container_opcoes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container_funcionario .container_opcoes .titulo_opcoes {
+    margin-bottom: 5px;
+  }
+
+  .container_funcionario .container_opcoes button {
+    margin-top: 5px;
+  }
+
+  .container_funcionario .funcionario .matricula {
+    display: grid;
+
+    grid-template-columns: 100px 300px 95px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .container_funcionario .funcionario .nome {
+    display: grid;
+
+    grid-template-columns: 100px 400px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .container_funcionario .funcionario .setor {
+    display: grid;
+
+    grid-template-columns: 100px 400px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .container_funcionario .funcionario .cartao_pis {
+    display: grid;
+
+    grid-template-columns: 100px 140px 110px 140px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .container_funcionario .funcionario .situacao {
+    display: grid;
+
+    grid-template-columns: 100px 140px 110px 140px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .container_funcionario .funcionario .cadastro {
+    display: grid;
+
+    grid-template-columns: 119px 116px 120px 120px;
+
+    gap: 10px;
+
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+  .container_funcionario .funcionario .titulo {
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+
+  /*------------------------------------------------ <> CARTÕES <> ------------------------------------------------*/
+
+  .container_cartoes {
+    display: block;
+
+    background-color: #fff;
+
+    padding: 10px 10px;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+    grid-template-columns: 520px 100px;
+
+    gap: 15px;
+
+  }
+
+  .container_cartoes .cartoes .titulo_cartoes{
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+
+  .container_cartoes .cartoes .cartao_provisorio {
+    display: grid;
+
+    grid-template-columns: 120px 150px 150px 150px;
+
+    gap: 10px;
+
+    margin: 5px 5px;
+  }
+
+  .container_cartoes .cartoes .data_provisorio {
+    display: grid;
+
+    grid-template-columns: 120px 150px 150px 150px;
+
+    gap: 10px;
+
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+
+  /*------------------------------------------------ <> BLOQUEIO <> ------------------------------------------------*/
+
+  .container_bloqueio {
+    display: none;
+
+    background-color: #fff;
+
+    padding: 10px 10px;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+    grid-template-columns: 520px 100px;
+
+    gap: 15px;
+
+  }
+
+  .container_bloqueio .bloqueio .titulo_bloqueio {
+    padding-left: 5px;
+    margin-bottom: 10px;
+  }
+
+  .container_bloqueio .bloqueio .situacao {
+    display: grid;
+
+    grid-template-columns: 120px 150px 150px 150px;
+
+    gap: 10px;
+
+    margin: 5px 5px;
+  }
+
+  .container_bloqueio .bloqueio .data {
+    display: grid;
+
+    grid-template-columns: 120px 150px 150px 150px;
+
+    gap: 10px;
+
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+  /*------------------------------------------------ <> MODAL HEAD <> ------------------------------------------------*/
+
+  .modal_head .container_heads .head_atual,
+  .head_novo {
+    display: grid;
+
+    grid-template-columns: 100px 150px;
+
+    gap: 5px;
+
+    margin: 5px 5px;
+  }
+
+  .modal_head .container_opcoes_heads .opcoes_heads .acao_botoes {
+    display: grid;
+
+    grid-template-columns: 150px 150px;
+
+    gap: 10px;
+
+    margin: 5px 5px;
+  }
+
+  .modal_head .container_opcoes_heads .opcoes_heads h5{
+    margin-top: 10px;
+    padding-left: 5px;
+  }
+}

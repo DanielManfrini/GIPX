@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  position: relative;
+
+  margin-top: 70px;
+
+  justify-content: center;
+
+}
+
+.container_interno{
+  background-color: #ffffff;
+
+  width: 1500px;
+
+  margin: 0 80px;
+
+  margin-bottom: 30px;
+
+  padding: 15px 15px;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+
+  border-radius: 5px;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: #000;
+
+}
+
+table {
+  border-collapse: collapse;
+
+  padding: 15px 0;
+
+  text-align: center;
+
+  background-color: #ffffff;
+
+  color: #000;
+
+}
+
+.header_tabela td{
+  border-top: 1px solid rgb(100, 100, 100);
+  border-left: 1px solid rgb(100, 100, 100);
+}
+
+th:not(.header_coluna) {
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+  font-family: Arial;
+
+  color: #000;
+}
+
+
+td {
+  padding: 15px;
+  border-bottom: 1px solid rgb(100, 100, 100);
+  font-size: 13px;
+} 
+
+.button-link{
+  background: rgb(100,100,100);
+  color: white;
+
+  margin-bottom: 15px;
+
+  width: 100px;
+  height: 25px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.button-link:hover {
+  background-color: #FF793C;
+  transition: 0.6s;
+}
+
+tr:not(.header_tabela):hover {
+  background-color: rgb(130, 188, 211);
+}
+
+table input[type="entry"] {
+  width: 120px;
+}
+
+table select {
+  width: 160px;
+}
+
+.ramal input[type="entry"]{
+  width: 50px;
+}
+
+.fim_tabela {
+  border-right: 1px solid rgb(100, 100, 100);
+}
+
+.header_tabela{
+  background-color: rgb(170, 170, 170);
+}
+
+.linha_historico{
+  border-bottom: 1px solid rgb(100, 100, 100);
+
+}
+
+.linha_historico{
+   margin: 0 auto;
+}
+
+/* Estilos para o botão */
+div.dt-buttons button {
+  width: 120px;
+  height: 28px;
+  margin-left: 15px;
+  line-height: 14px;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  line-height: 20px;
+  height: 28px;
+}
